@@ -1,7 +1,7 @@
 class Solution {
 public:
 
-    bool check(vector<vector<int>> mat,int x,int y){
+    bool check(vector<vector<int>> &mat,int x,int y){
         for(int i=0;i<mat.size();i++){
             if(i==x) continue;
             if(mat[i][y]==1) return false;
