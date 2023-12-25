@@ -17,6 +17,5 @@ public:
         int m=word2.length();
         vector<vector<int>> dp(n+1,vector<int>(m+1,-1));
         return solve(word1,word2,n-1,m-1,dp);
-
     }
 };
