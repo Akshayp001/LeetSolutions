@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool solve(int i,int j,string s,vector<vector<int>> &dp){
+    bool solve(int i,int j,string &s,vector<vector<int>> &dp){
         if(i>j) return false;
         if(i==j) return dp[i][j]=1;
         if(dp[i][j]!=-1) return dp[i][j];
