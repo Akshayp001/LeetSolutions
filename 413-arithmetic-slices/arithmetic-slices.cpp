@@ -6,12 +6,8 @@ public:
         if(n<3) return 0;
 
         for(int i=2;i<n;i++){
-            if(nums[i]-nums[i-1]==nums[i-1]-nums[i-2]){
-                curr++;
-                total+=curr;
-            }else{
-                curr=0;
-            }
+            if(nums[i]-nums[i-1]==nums[i-1]-nums[i-2]) total+=++curr;
+            else curr=0;
         }
         return total;
         
