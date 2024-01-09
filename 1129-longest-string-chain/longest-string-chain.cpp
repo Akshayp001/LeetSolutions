@@ -4,7 +4,7 @@ bool cmp(string &s,string &t){
 
 class Solution {
 public:
-    bool isPred(string prev,string curr){
+    bool isPred(string &prev,string &curr){
         if(curr.length()!=(prev.length()+1)) return false;
 
         int flag=1;
