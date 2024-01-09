@@ -35,17 +35,34 @@ public:
         //     }
         // }  
 
-        //One State Tabulation
-        vector<int> dp(n,1);
-        int maxi =1;
-        for(int i=0;i<n;i++){
-            for(int j=0;j<i;j++){
-                if(nums[j]<nums[i]){
-                    dp[i] = max(dp[i],dp[j]+1);
-                    maxi = max(maxi,dp[i]);
-                }
+        // //One State Tabulation
+        // vector<int> dp(n,1);
+        // int maxi =1;
+        // for(int i=0;i<n;i++){
+        //     for(int j=0;j<i;j++){
+        //         if(nums[j]<nums[i]){
+        //             dp[i] = max(dp[i],dp[j]+1);
+        //             maxi = max(maxi,dp[i]);
+        //         }
+        //     }
+        // }
+        // return maxi;  
+
+        //Binary Search Approach
+        vector<int> LIS;
+
+        for(auto num:nums){
+            if(LIS.size()==0){
+                LIS.push_back(num);
+                continue;
+            }
+            if(num>LIS.back()){
+                LIS.push_back(num);
+            }else{
+                int ub = lower_bound(LIS.begin(),LIS.end(),num) - LIS.begin();
+                LIS[ub]=num;
             }
         }
-        return maxi;  
+        return LIS.size();
     }
 };
