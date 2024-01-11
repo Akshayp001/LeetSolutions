@@ -36,32 +36,28 @@ public:
     // }
 
     //optimal
-    pair<int,int> minForNodes(TreeNode* root,vector<vector<int>> &pairs){
+    pair<int,int> minForNodes(TreeNode* root,int &ans){
         if(root->left==NULL && root->right==NULL) return {root->val,root->val};
-        int mini = INT_MAX;
-        int maxi = INT_MIN;
+
+        int mini = INT_MAX,maxi = INT_MIN;
         if(root->left){
-            pair<int,int> left = minForNodes(root->left,pairs);
+            pair<int,int> left = minForNodes(root->left,ans);
             mini = min({left.first,mini,root->left->val});
             maxi = max({left.second,maxi,root->left->val});
         }
         if(root->right){
-            pair<int,int> right = minForNodes(root->right,pairs);
+            pair<int,int> right = minForNodes(root->right,ans);
             mini = min({right.first,mini,root->right->val});
             maxi = max({right.second,maxi,root->right->val});
         }
 
-        pairs.push_back({root->val,mini,maxi});
+        ans = max({ans,abs((root->val)-mini),abs((root->val)-maxi)});
         return {mini,maxi};
     }
 
     int maxAncestorDiff(TreeNode* root) {
-        vector<vector<int>> pairs;
-        minForNodes(root,pairs);
-        int ans = 0;
-        for(auto pair:pairs){
-            ans = max({ans,abs(pair[0]-pair[1]),abs(pair[0]-pair[2])});        
-        }
-        return ans;      
+        int anss = INT_MIN;
+        minForNodes(root,anss);
+        return anss;      
     }
 };
