@@ -9,14 +9,10 @@ public:
     bool halvesAreAlike(string s) {
         int cnt1=0,cnt2=0;
         for(int i=0;i<s.length()/2;i++){
-            cout<<s[i]<<"first half"<<endl;
             if(isVowel(s[i])) cnt1++;
-            cout<<cnt1<<endl;
         }
         for(int i=s.length()/2;i<s.length();i++){
-            cout<<s[i]<<"second half"<<endl;
             if(isVowel(s[i])) cnt2++;
-            cout<<cnt2<<endl;
         }
         return cnt1==cnt2;        
     }
