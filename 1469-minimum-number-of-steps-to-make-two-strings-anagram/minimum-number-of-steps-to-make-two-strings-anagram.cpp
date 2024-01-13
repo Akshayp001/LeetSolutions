@@ -5,10 +5,8 @@ public:
         int ans = 0;
 
         for(auto &i:s) m[i]++;
-        for(auto &i:t){
-            if(m[i]) m[i]--;
-            else ans++;
-        }
+        for(auto &i:t) if(m[i]) m[i]--; else ans++;
+        
         return ans;
              
     }
