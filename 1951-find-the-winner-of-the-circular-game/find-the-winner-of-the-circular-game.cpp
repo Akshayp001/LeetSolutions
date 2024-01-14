@@ -1,34 +1,18 @@
 class Solution {
 public:
     int findTheWinner(int n, int k) {
-        vector<int> arr(n,1);
+        queue<int> q;
+        for(int i=1;i<=n;i++) q.push(i);
 
-        int ctr=0;
-        int killed = n;
-        for(int i = 0; i < n; i++){
-            if(killed==1) break;
-
-            if(arr[i]==0){
-                if(i==n-1){
-                    i=-1;
-                }
-                continue;   
+        k--;
+        while(q.size()!=1){
+            for(int i=0;i<k;i++){
+                int temp = q.front();
+                q.pop();
+                q.push(temp);
             }
-
-            ctr++;
-
-            if(ctr==k){
-                arr[i]=0;
-                killed--;
-                ctr=0;
-            }
-            if(i==n-1) i=-1;
-            
+            q.pop();
         }
-
-        for(int i=0;i<n;i++){
-            if(arr[i]!=0) return i+1;        
-        } 
-        return -1; 
+        return q.front();
     }
 };
