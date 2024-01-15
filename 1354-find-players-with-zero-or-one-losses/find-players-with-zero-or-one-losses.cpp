@@ -16,8 +16,6 @@ public:
             if(i.second==-1) ans[1].push_back(i.first);
             if(i.second>0) ans[0].push_back(i.first);
         }
-        // sort(ans[0].begin(),ans[0].end());
-        // sort(ans[1].begin(),ans[1].end());
         return ans;        
     }
 };
