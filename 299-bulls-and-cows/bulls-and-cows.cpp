@@ -17,12 +17,6 @@ public:
                 y+=min(si.second,g[si.first]);
             }
         }
-        string ans="";
-        ans+= to_string(x);
-        ans+='A';
-        ans+= to_string(y);
-        ans+='B';
-
-        return ans;       
+        return to_string(x)+'A'+to_string(y)+'B';   
     }
 };
