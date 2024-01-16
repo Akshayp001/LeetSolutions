@@ -27,7 +27,6 @@ public:
 
         auto it = arr.begin();
         advance(it,ri);
-
         return *it;
     }
 };
