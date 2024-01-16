@@ -1,5 +1,5 @@
 class RandomizedSet {
-    set<int> arr;    
+    unordered_set<int> arr;    
 public:
     RandomizedSet() {
             
