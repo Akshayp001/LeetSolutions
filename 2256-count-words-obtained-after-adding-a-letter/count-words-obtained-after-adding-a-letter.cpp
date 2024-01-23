@@ -7,7 +7,7 @@ public:
             s.insert(i);
         }
         int ans = 0;
-        for(string str:targetWords){
+        for(string &str:targetWords){
             sort(str.begin(),str.end());
             for(int i=0;i<str.length();i++){
                 string tgt = str.substr(0,i)+str.substr(i+1);
