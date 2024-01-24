@@ -10,26 +10,37 @@
  * };
  */
 class Solution {
-public:
 
-    void preOrder(TreeNode* root,unordered_map<int,int> mp,int &ans) {
-        if (root == nullptr) return;
+private: 
+    bool check(unordered_map<int,int> &m){
+        int even=0;
+        int odd=0;
 
-        mp[root->val]++;
-        if (root->left == nullptr && root->right == nullptr) {
-            int cnt=0;
-            for(auto i : mp) if(i.second&1) cnt++;
-            if(cnt<=1) ans++;
-            return;
+        for(auto it:m){
+            if((it.second)%2==0)even++;
+            else{ odd++;}
         }
-        preOrder(root->left, mp,ans);
-        preOrder(root->right, mp,ans);
+        if(odd==0 || odd==1)return true;
+        return false;
     }
+    void dfs(TreeNode* root, int &paths, unordered_map<int,int> m){
 
+        if(root==NULL)return;
+        m[root->val]++;
+        if(root->left==NULL && root->right==NULL){
+            if(check(m)){
+                paths++;
+            }
+            return ;
+        }
+        dfs(root->left,paths,m);
+        dfs(root->right,paths,m);
+    }
+public:
     int pseudoPalindromicPaths (TreeNode* root) {
-        unordered_map<int,int> mp;
-        int ans=0;
-        preOrder(root,mp,ans);
-        return ans;        
+        int paths=0;
+        unordered_map<int,int> m;
+        dfs(root, paths,m);
+        return paths;  
     }
 };
