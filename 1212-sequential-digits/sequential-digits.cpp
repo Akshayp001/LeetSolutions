@@ -1,6 +1,5 @@
 class Solution {
 public:
-    
     vector<int> res(){
         vector<int> v;
         for(int i=1;i<9;i++){
@@ -13,9 +12,10 @@ public:
         }
         return v;
     }
-    vector<int> seqDigits=res();
 
     vector<int> sequentialDigits(int low, int high) {
+    vector<int> seqDigits=res();
+
         int li = lower_bound(seqDigits.begin(),seqDigits.end(),low)-seqDigits.begin();
         int hi = upper_bound(seqDigits.begin(),seqDigits.end(),high)-seqDigits.begin();
         vector<int> ans(seqDigits.begin()+li,seqDigits.begin()+hi);
