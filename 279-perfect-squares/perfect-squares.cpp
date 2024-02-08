@@ -18,6 +18,7 @@ public:
         int last = lower_bound(sqrs.begin(),sqrs.end(),n)-sqrs.begin();
         int mini = INT_MAX;
         for(int i=last;i>=0;i--){
+            if(sqrs[i]>n) continue;
             mini = min(mini,1+solve(n-sqrs[i],dp));
         }
         return dp[n]=mini;
