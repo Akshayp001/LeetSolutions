@@ -4,16 +4,9 @@ public:
         int count=0;
         int m = grid.size();
         for(int i=0;i<m;i++){
-            int s=0,e=grid[i].size();
-            while(s<e){
-                int mid =(e+s)/2;
-                if(grid[i][mid]>=0){
-                    s = mid+1;
-                }else{
-                    e= mid;
-                }
-            }
-            count+=grid[i].size()-s;
+            auto it =upper_bound(grid[i].rbegin(),grid[i].rend(),-1);
+            if(it!=grid[i].rbegin() || grid[i][0]<0)
+                count+=(it-grid[i].rbegin());
         }
         return count;        
     }
