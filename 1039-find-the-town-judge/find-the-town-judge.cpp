@@ -3,7 +3,7 @@ public:
     int findJudge(int n, vector<vector<int>>& trust) {
         if(n==1) return 1;
         unordered_map<int,int> m;
-        unordered_map<int,int> trusted;
+        vector<int> trusted(n+1,0);
         for(auto &i:trust){
             m[i[1]]++;
             trusted[i[0]]=1;
