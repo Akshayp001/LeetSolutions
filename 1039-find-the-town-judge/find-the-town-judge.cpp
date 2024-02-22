@@ -10,7 +10,7 @@ public:
         }
         int ans=-1;
         for(int i=1;i<=n;i++) 
-            if(m[i]==n-1 && !trusted[i]) ans=i;
+            if(m[i]==n-1 && !trusted[i]) return i;
         return ans;
     }
 };
