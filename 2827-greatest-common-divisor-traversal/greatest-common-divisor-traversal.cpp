@@ -6,7 +6,7 @@ public:
         iota(parent.begin(), parent.end(), 0);
     }
     int find(int x) {
-        if(x == parent[x]) return x;
+        if(x==parent[x]) return x;
         return parent[x] = find(parent[x]);
     }
     void adds() {
@@ -14,16 +14,16 @@ public:
         rank.push_back(1);
         n++;
     }
-    void uni(int x, int y) {
-        int px = find(x);
-        int py = find(y);
-        if(px == py) return;
-        if(rank[px] > rank[py]) {
-            rank[px] += rank[py];
-            parent[py] = px;
+    void uni(int u,int v) {
+        int pu = find(u);
+        int pv = find(v);
+        if(pu == pv) return;
+        if(rank[pu] > rank[pv]) {
+            rank[pu] += rank[pv];
+            parent[pv] = pu;
         } else {
-            rank[py] += rank[px];
-            parent[px] = py;
+            rank[pv] += rank[pu];
+            parent[pu] = pv;
         }
         return;
     }
