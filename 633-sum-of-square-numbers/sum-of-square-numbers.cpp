@@ -14,7 +14,6 @@ public:
     bool judgeSquareSum(int c) {
         if(c==0) return true;
         int i=0,j=lower_bound(sq.begin(),sq.end(),c)-sq.begin();
-        cout<<sq[sq.size()-1]<<endl;
         if(sq[j]==c) return true;
         j--;
         while(i<=j){
