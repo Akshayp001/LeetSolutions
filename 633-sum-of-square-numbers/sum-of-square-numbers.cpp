@@ -3,21 +3,16 @@ public:
     vector<long long> gen(){
         vector<long long> v;
         int cap = sqrt(INT_MAX)+1;
-        for(int i=1;i<=cap;i++){
-            long long t=i;
-            v.push_back(t*i);
-        }
+        for(long long i=1;i<=cap;i++) v.push_back(i*i);
         return v;
     }
     vector<long long> sq=gen();
 
     bool judgeSquareSum(int c) {
-        if(c==0) return true;
         int i=0,j=lower_bound(sq.begin(),sq.end(),c)-sq.begin();
-        if(sq[j]==c) return true;
-        j--;
+        if(sq[j]==c || c==0) return true; 
         while(i<=j){
-            if((long long)(sq[i]+sq[j])==c) return true;
+            if((sq[i]+sq[j])==c) return true;
             if(c-sq[j]>sq[i]) i++;
             else j--;
         }
