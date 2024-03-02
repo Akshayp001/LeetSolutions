@@ -8,11 +8,9 @@ public:
             if(a==b){
                 ans.push_back(a*a); i++;
                 ans.push_back(b*b); j--;
-            }else if(b>a){
-                ans.push_back(b*b); j--;
-            }else{
-                ans.push_back(a*a); i++;
-            }
+            }else if(b>a) ans.push_back(b*b),j--;
+            else ans.push_back(a*a),i++;
+            
         }
         if(i==j) ans.push_back(nums[i]*nums[i]);
         reverse(ans.begin(),ans.end());
