@@ -17,8 +17,8 @@ public:
         second->next = newNode->next;
         delete newNode;
 
-        ListNode* newHead = dummy->next;
+        head = dummy->next;
         delete dummy;
-        return newHead;
+        return head;
     }
 };
