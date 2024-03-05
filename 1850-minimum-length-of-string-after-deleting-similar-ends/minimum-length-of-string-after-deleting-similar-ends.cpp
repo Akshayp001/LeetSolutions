@@ -7,14 +7,11 @@ public:
             if(s[i]==s[j]){
                 char t = s[i];
                 while(i<=j){
-                    if(s[i]==t){
-                        i++; n--;
-                    }else if(s[j]==t){
-                        j--; n--;
-                    }else break; 
+                    if(s[i]==t) i++, n--;
+                    else if(s[j]==t) j--, n--;
+                    else break; 
                 }
-            }else break;
-            
+            }else break; 
         }
         return n;
     }
