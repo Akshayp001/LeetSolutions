@@ -1,8 +1,8 @@
 class Solution {
 public:
     int minimumLength(string s) {
-        int i=0,j=s.length()-1;
-        int n = s.length();
+        int n = s.size();
+        int i=0,j=n-1;
         while(i<j){
             if(s[i]==s[j]){
                 char t = s[i];
