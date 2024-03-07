@@ -4,12 +4,11 @@ public:
         int n = chars.size();
         int  i=0,j=1;
         int count=1;
-        while(j<chars.size()){
-            if(chars[i]==chars[j]) count++,j++,cout<<chars[i]<<" "<<count<<endl;
+        while(j<chars.size() || count>1){
+            if(j<chars.size() && chars[i]==chars[j]) count++,j++;
             else{
                 if(i+1==j){
-                    count=0;
-                    i++;
+                    count=0; i++;
                     continue;
                 }
                 i++;
@@ -24,18 +23,6 @@ public:
                     j--;
                 }
             }
-        }
-        if(count>1){
-                i++;
-                string cnt = to_string(count);
-                count=0;
-                for(auto &it:cnt){
-                    chars[i]=it;
-                    i++;
-                }
-                while(i<chars.size()){
-                    chars.erase(chars.begin()+i);
-                }
         }
         return chars.size();
     }
