@@ -15,6 +15,7 @@ public:
                 ans+=maxi;
             }
         }
+        cout<<ans<<endl;
         return ans;
         
     }
