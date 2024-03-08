@@ -7,10 +7,9 @@ public:
         int xorr = 0;
         for(auto &i:nums) xorr ^= i;
         
-        // Finding the rightmost set bit
         int set = 0;
         int t = xorr;
-        while((t & 1) != 1) { // Check if the rightmost bit is set
+        while((t & 1) != 1) {
             set++;
             t >>= 1;
         }
