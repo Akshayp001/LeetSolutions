@@ -1,10 +1,7 @@
-#include <vector>
-#include <cmath>
-
 class Solution {
 public:
-    int singleNumber(std::vector<int>& nums) {
-        std::vector<int> bits(32, 0);
+    int singleNumber(vector<int>& nums) {
+        vector<int> bits(32, 0);
         for (auto num : nums) {
             for (int j = 0; j < 32; j++) {
                 bits[j] += ((num >> j) & 1);
