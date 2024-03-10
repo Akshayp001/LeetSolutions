@@ -17,7 +17,6 @@ public:
             
             while(l<=h){
                int mid = (l+h)/2;
-               cout<<mid<<" "<<nums2[mid]<<endl;
                 if(target==nums2[mid]){
                     sol.push_back(target);
                     break;
