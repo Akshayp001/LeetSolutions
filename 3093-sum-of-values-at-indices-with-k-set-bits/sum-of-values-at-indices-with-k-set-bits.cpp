@@ -4,7 +4,6 @@ public:
         int cnt=0;
         while(n){
             if(n&1) cnt++;
-            cout<<n<<" okk"<<endl;
             n=n>>1;
         }
         return cnt;
