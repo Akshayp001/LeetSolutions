@@ -19,7 +19,8 @@ public:
     }
     
     void increment(int k, int val) {
-        for(int i=0;i<k && i<s.size();i++){
+        int n= min(k,(int)s.size());
+        for(int i=0;i<n;i++){
             s[i]+=val;
         }
     }
