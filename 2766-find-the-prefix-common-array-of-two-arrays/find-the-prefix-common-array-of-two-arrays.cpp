@@ -7,15 +7,28 @@ public:
         }
         return cnt;
     }
+    // vector<int> findThePrefixCommonArray(vector<int>& A, vector<int>& B) {
+    //     unordered_map<int,int> a,b;
+    //     vector<int> ans;
+    //     int n = A.size();
+    //     for(int i=0;i<n;i++){
+    //         a[A[i]]++;
+    //         b[B[i]]++;
+    //         ans.push_back(common(a,b));
+    //     }
+    //     return ans;       
+    // }
     vector<int> findThePrefixCommonArray(vector<int>& A, vector<int>& B) {
-        unordered_map<int,int> a,b;
+        // bitmask approach
         vector<int> ans;
-        int n = A.size();
+        bitset<51> a;
+        bitset<51> b;
+        int n= A.size();
         for(int i=0;i<n;i++){
-            a[A[i]]++;
-            b[B[i]]++;
-            ans.push_back(common(a,b));
+            a.set(A[i]);
+            b.set(B[i]);
+            ans.push_back((a&b).count());
         }
-        return ans;       
+        return ans;        
     }
 };
