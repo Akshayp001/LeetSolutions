@@ -1,7 +1,9 @@
 class Solution {
 public:
     long long maximumHappinessSum(vector<int>& happiness, int k) {
-        
+        ios::sync_with_stdio(false);
+         cin.tie(nullptr);
+         cout.tie(nullptr);
         priority_queue<long long> pq;
         for(auto &i:happiness) pq.push(i);
         long long ans=0,inc=0;
