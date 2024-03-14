@@ -10,6 +10,7 @@ public:
         }
 
         for(int i=1;i<n;i++){
+            if(pref[i]<goal) continue;
             for(int j=0;j<i;j++){
                 if(pref[i]-pref[j]==goal) cnt++;
             }
