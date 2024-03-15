@@ -2,7 +2,8 @@ class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
         int n=nums.size();
-        vector<int> r(n),l(n);
+        int *r=new int[n];
+        int *l=new int[n];
         int ctr=1,cnt=1;
         for(int i=0;i<n;i++){
             r[i]=ctr; ctr*=nums[i];
