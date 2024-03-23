@@ -3,10 +3,10 @@ public:
     int getXORSum(vector<int>& arr1, vector<int>& arr2) {
         int bx = 0;
         for(auto &i:arr2) bx^=i;
-        int ax = 0;
+        int ans = 0;
         for(auto &i:arr1){
-            ax = ax ^ i;
+            ans = ans ^ (i&bx);
         }
-        return ax&bx;
+        return ans;
     }
 };
