@@ -1,11 +1,17 @@
 class Solution {
 public:
     int lengthOfLastWord(string s) {
-        istringstream my_stream(s);
-        string last;
-        while(my_stream>>s){
-            last=s;
-        }               
-        return last.length();
+        string ans,t="";
+        for(auto &i:s){
+            if(i==' '){
+                if(t!=""){
+                    ans = t;
+                    t="";
+                }
+            }else t+=i;
+        }
+         if(t!="") ans = t,t="";
+         return ans.length();
+            
     }
 };
