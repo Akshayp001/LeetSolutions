@@ -4,14 +4,10 @@ public:
         string ans,t="";
         for(auto &i:s){
             if(i==' '){
-                if(t!=""){
-                    ans = t;
-                    t="";
-                }
+                if(t!="") ans = t,t="";   
             }else t+=i;
         }
-         if(t!="") ans = t,t="";
-         return ans.length();
-            
+        if(t!="") ans = t,t="";
+        return ans.length();    
     }
 };
