@@ -13,7 +13,7 @@ class Solution {
 public:
     bool evaluateTree(TreeNode* root) {
         if(root->left==nullptr && root->right==nullptr) return root->val;
-        if(root->val==2) return evaluateTree(root->left) || evaluateTree(root->right);
-        return evaluateTree(root->left) && evaluateTree(root->right); 
+        if(root->val==2) return evaluateTree(root->left) or evaluateTree(root->right);
+        return evaluateTree(root->left) and evaluateTree(root->right); 
     }
 };
